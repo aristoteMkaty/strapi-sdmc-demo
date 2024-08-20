@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blocked_business_partners",
+  "info": {
+    "singularName": "blocked-business-partner",
+    "pluralName": "blocked-business-partners",
+    "displayName": "Blocked Business Partner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "BusinessPartnerID": {
+      "type": "string"
+    }
+  }
+}
