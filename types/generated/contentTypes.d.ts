@@ -871,6 +871,36 @@ export interface ApiContent2Content2 extends Schema.SingleType {
   };
 }
 
+export interface ApiMartinMartin extends Schema.SingleType {
+  collectionName: 'martins';
+  info: {
+    singularName: 'martin';
+    pluralName: 'martins';
+    displayName: 'martin';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    test: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::martin.martin',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::martin.martin',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNightlyNotificationTemplateNightlyNotificationTemplate
   extends Schema.SingleType {
   collectionName: 'nightly_notification_templates';
@@ -1011,6 +1041,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::blocked-business-partner.blocked-business-partner': ApiBlockedBusinessPartnerBlockedBusinessPartner;
       'api::content-2.content-2': ApiContent2Content2;
+      'api::martin.martin': ApiMartinMartin;
       'api::nightly-notification-template.nightly-notification-template': ApiNightlyNotificationTemplateNightlyNotificationTemplate;
     }
   }

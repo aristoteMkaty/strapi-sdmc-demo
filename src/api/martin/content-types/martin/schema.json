@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "martins",
+  "info": {
+    "singularName": "martin",
+    "pluralName": "martins",
+    "displayName": "martin"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "test": {
+      "type": "string"
+    }
+  }
+}
