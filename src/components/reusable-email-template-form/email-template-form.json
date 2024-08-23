@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_reusable_email_template_form_email_template_forms",
+  "info": {
+    "displayName": "Email-template-form",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headerText": {
+      "type": "string"
+    },
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "En",
+        "De",
+        "It",
+        "Hu"
+      ]
+    },
+    "salutation": {
+      "type": "string"
+    },
+    "updatedDocuments": {
+      "type": "string"
+    },
+    "overview": {
+      "type": "string"
+    },
+    "changedDocuments": {
+      "type": "string"
+    },
+    "changedAt": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "string"
+    },
+    "regards": {
+      "type": "string"
+    },
+    "regardsEnd": {
+      "type": "string"
+    },
+    "aldiName": {
+      "type": "string"
+    },
+    "confidentialMessageNote": {
+      "type": "text"
+    },
+    "empowerIdAccountNote": {
+      "type": "text"
+    }
+  }
+}

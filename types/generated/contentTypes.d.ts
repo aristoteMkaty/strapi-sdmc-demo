@@ -819,12 +819,14 @@ export interface ApiBlockedBusinessPartnerBlockedBusinessPartner
   };
 }
 
-export interface ApiContent2Content2 extends Schema.SingleType {
-  collectionName: 'content_2s';
+export interface ApiNightlyNotificationNightlyNotification
+  extends Schema.SingleType {
+  collectionName: 'nightly_notifications';
   info: {
-    singularName: 'content-2';
-    pluralName: 'content-2s';
-    displayName: 'Content-2';
+    singularName: 'nightly-notification';
+    pluralName: 'nightly-notifications';
+    displayName: 'nightly-notification';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -835,13 +837,10 @@ export interface ApiContent2Content2 extends Schema.SingleType {
     };
   };
   attributes: {
-    testcontent: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    numbercontent: Attribute.Integer &
+    EmailTemplateComponent: Attribute.Component<
+      'reusable-email-template-form.email-template-form',
+      true
+    > &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -851,53 +850,23 @@ export interface ApiContent2Content2 extends Schema.SingleType {
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::content-2.content-2',
+      'api::nightly-notification.nightly-notification',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::content-2.content-2',
+      'api::nightly-notification.nightly-notification',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     localizations: Attribute.Relation<
-      'api::content-2.content-2',
+      'api::nightly-notification.nightly-notification',
       'oneToMany',
-      'api::content-2.content-2'
+      'api::nightly-notification.nightly-notification'
     >;
     locale: Attribute.String;
-  };
-}
-
-export interface ApiMartinMartin extends Schema.SingleType {
-  collectionName: 'martins';
-  info: {
-    singularName: 'martin';
-    pluralName: 'martins';
-    displayName: 'martin';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    test: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::martin.martin',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::martin.martin',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
   };
 }
 
@@ -1040,8 +1009,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::blocked-business-partner.blocked-business-partner': ApiBlockedBusinessPartnerBlockedBusinessPartner;
-      'api::content-2.content-2': ApiContent2Content2;
-      'api::martin.martin': ApiMartinMartin;
+      'api::nightly-notification.nightly-notification': ApiNightlyNotificationNightlyNotification;
       'api::nightly-notification-template.nightly-notification-template': ApiNightlyNotificationTemplateNightlyNotificationTemplate;
     }
   }
